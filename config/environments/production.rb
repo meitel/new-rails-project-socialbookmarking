@@ -1,4 +1,5 @@
 Rails.application.configure do
+ 
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -76,6 +77,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  # TODO chang:host to heroku 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+ # Sets secret_key_base as environment variable
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+  
+  config.action_mailer.default_url_options = { host: 'bookmarkingapp.herokuapp.com}
 end
