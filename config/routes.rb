@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'topics/about'
 
  root to: 'topics#index'
+
+ post :incoming, to: 'incoming#create'
 end
