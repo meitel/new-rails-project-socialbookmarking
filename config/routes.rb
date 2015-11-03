@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'topics/index'
+ 
+ get 'bookmarks/new'
+ get 'bookmarks/edit'
+ get 'bookmarks/show'
+   
+   devise_for :users
+   get 'topics/index'
+   resources :topics
+ 
+   root to: 'topics#index'
+ 
+   post :incoming, to: 'incoming#create'
+ end
 
-  get 'topics/about'
-
- root to: 'topics#index'
-
- post :incoming, to: 'incoming#create'
-end
