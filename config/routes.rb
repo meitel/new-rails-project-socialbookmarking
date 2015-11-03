@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  get 'bookmarks/show'
    
    devise_for :users
-   get 'topics/index'
+   get 'topic/index'
    resources :topics
  
    root to: 'topics#index'
