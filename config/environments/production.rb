@@ -81,5 +81,5 @@ Rails.application.configure do
  # Sets secret_key_base as environment variable
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
   
-  config.action_mailer.default_url_options = { host: 'bookmarkingapp.herokuapp.com}
+  config.action_mailer.default_url_options = { host: 'bookmarkingapp.herokuapp.com' }
 end
