@@ -10,7 +10,6 @@ class IncomingController < ApplicationController
     # Check if user is nil, if so, create and save a new user
     if @user.nil?
       @user = User.new(email: params[:sender], password: "temp0rary_passw0rd")
-      @user.skip_confirmation!
       @user.save!
     end
   
