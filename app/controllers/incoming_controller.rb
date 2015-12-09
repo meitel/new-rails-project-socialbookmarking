@@ -22,7 +22,11 @@ class IncomingController < ApplicationController
   
     # Assign the url to a variable after retreiving it from params["body-plain"]
     @url = params["body-plain"]
-    @bookmark = @user.bookmarks.create(url: @url, topic_id: @topic.id)
+
+    Bookmark # Create new active record instance with rails
+    # Create/destroy activerecord rails 4
+    @bookmark = @topic.bookmarks.create(url: @url)
+
     # Now that you're sure you have a valid user and topic, build and save a new bookmark
     head 200
   end
